@@ -2,7 +2,6 @@ use chrono::prelude::*;
 use colored::*;
 use std::{thread::sleep, time::Duration};
 fn main() {
-    #[allow(unused_variables)]
     let mystrings = [
         String::from("ow&9!j%-c0gL6P=3aA86r5v+SICpm47qoZUNSgfr*1$m+8ib5K/k83E7tB~O#d~NQPDXHR4)^12y9_Lr(FJ7@M2x8Y$D1v~4&7jZb2Sgfr*1$m=3aA86r5v+"),String::from(
         "kxwUE8@$!G2r+I%vwrsst4*4i&sB#k3HRa7d!$nFzj6P)YX6AzfDQ#UQ9h$*7cWL8T!o^^0KFhVEgbOmd2YilW4&2KzN@7b5#9q$6L#k3HRa7d!$nUE8@$!G"),
@@ -26,8 +25,8 @@ fn main() {
 
     fn clear_screen() {
         println!("\x1B[2J\x1B[H");
-        //Ansi code to clear the terminal and move cursor to the top left
-    }
+
+    }  
     fn what_to_print(
         front_space: &mut Vec<String>,
         hour_tens: &mut Vec<String>,
@@ -47,8 +46,6 @@ fn main() {
         space3: &mut Vec<String>,
         backspace: &mut Vec<String>,
     ) {
-        //colorise the stuff, this will go to the infinite loop, hence this will colorise the variables down
-        //1. take the values
         #[allow(unused_variables)]
         #[allow(unused_imports)]
         let now = Local::now().time();
@@ -63,9 +60,8 @@ fn main() {
         let what_second_tens = second.chars().nth(0).unwrap();
         let what_second_ones = second.chars().nth(1).unwrap();
 
-        //1.1
 
-        //Colorify functions
+        //Colorify functions added
 
         let colorify_1 = |array: &mut Vec<String>| -> Vec<String> {
             let mut my_vector = Vec::new();
@@ -75,22 +71,22 @@ fn main() {
                     2 => format!(
                         "{}{}{}",
                         &item[0..4].truecolor(20, 20, 20),
-                        &item[4..8].bright_yellow(),
+                        &item[4..8].blue(),
                         &item[8..12].truecolor(20, 20, 20),
                     ),
                     3 => format!(
                         "{}{}{}",
                         &item[0..2].truecolor(20, 20, 20),
-                        &item[2..8].bright_yellow(),
+                        &item[2..8].blue(),
                         &item[8..12].truecolor(20, 20, 20),
                     ),
                     4..=8 => format!(
                         "{}{}{}",
                         &item[0..5].truecolor(20, 20, 20),
-                        &item[5..8].bright_yellow(),
+                        &item[5..8].blue(),
                         &item[8..12].truecolor(20, 20, 20),
                     ),
-                    9 => format!("{}", &item.bright_yellow()),
+                    9 => format!("{}", &item.blue()),
                     _ => format!("{}", &item.truecolor(20, 20, 20)),
                 };
                 my_vector.push(stringy);
@@ -107,47 +103,47 @@ fn main() {
                     2 => format!(
                         "{}{}{}",
                         &item[0..3].truecolor(20, 20, 20),
-                        &item[3..9].bright_yellow(),
+                        &item[3..9].blue(),
                         &item[9..12].truecolor(20, 20, 20)
                     ),
                     3 => format!(
                         "{}{}{}{}{}",
                         &item[0..1].truecolor(20, 20, 20),
-                        &item[1..4].bright_yellow(),
+                        &item[1..4].blue(),
                         &item[4..8].truecolor(20, 20, 20),
-                        &item[8..11].bright_yellow(),
+                        &item[8..11].blue(),
                         &item[11..12].truecolor(20, 20, 20)
                     ),
                     4 => format!(
                         "{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     5 => format!(
                         "{}{}",
                         &item[0..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow(),
+                        &item[9..12].blue(),
                     ),
                     6 => format!(
                         "{}{}{}",
                         &item[0..7].truecolor(20, 20, 20),
-                        &item[7..11].bright_yellow(),
+                        &item[7..11].blue(),
                         &item[11..12].truecolor(20, 20, 20),
                     ),
                     7 => format!(
                         "{}{}{}",
                         &item[0..5].truecolor(20, 20, 20),
-                        &item[5..9].bright_yellow(),
+                        &item[5..9].blue(),
                         &item[9..12].truecolor(20, 20, 20),
                     ),
                     8 => format!(
                         "{}{}{}",
                         &item[0..2].truecolor(20, 20, 20),
-                        &item[2..6].bright_yellow(),
+                        &item[2..6].blue(),
                         &item[6..12].truecolor(20, 20, 20),
                     ),
-                    9 => format!("{}", &item.bright_yellow()),
+                    9 => format!("{}", &item.blue()),
                     _ => format!("{}", &item.truecolor(20, 20, 20)),
                 };
                 my_vector.push(stringy);
@@ -163,48 +159,48 @@ fn main() {
                     2 | 9 => format!(
                         "{}{}{}",
                         &item[0..3].truecolor(20, 20, 20),
-                        &item[3..9].bright_yellow(),
+                        &item[3..9].blue(),
                         &item[9..12].truecolor(20, 20, 20)
                     ),
                     3 | 8 => format!(
                         "{}{}{}{}{}",
                         &item[0..1].truecolor(20, 20, 20),
-                        &item[1..4].bright_yellow(),
+                        &item[1..4].blue(),
                         &item[4..8].truecolor(20, 20, 20),
-                        &item[8..11].bright_yellow(),
+                        &item[8..11].blue(),
                         &item[11..12].truecolor(20, 20, 20)
                     ),
                     4 => format!(
                         "{}{}{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..4].truecolor(20, 20, 20),
-                        &item[4..5].bright_yellow(),
+                        &item[4..5].blue(),
                         &item[5..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     5 => format!(
                         "{}{}{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..5].truecolor(20, 20, 20),
-                        &item[5..6].bright_yellow(),
+                        &item[5..6].blue(),
                         &item[6..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     6 => format!(
                         "{}{}{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..6].truecolor(20, 20, 20),
-                        &item[6..7].bright_yellow(),
+                        &item[6..7].blue(),
                         &item[7..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     7 => format!(
                         "{}{}{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..7].truecolor(20, 20, 20),
-                        &item[7..8].bright_yellow(),
+                        &item[7..8].blue(),
                         &item[8..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     _ => format!("{}", item.truecolor(20, 20, 20)),
                 };
@@ -219,41 +215,41 @@ fn main() {
 
             for (i, item) in array.iter().enumerate() {
                 let colored_string = match i + 1 {
-                    2 => format!("{}", &item.bright_yellow()),
+                    2 => format!("{}", &item.blue()),
                     3 => format!(
                         "{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     4 => format!(
                         "{}{}",
                         &item[0..7].truecolor(20, 20, 20),
-                        &item[7..12].bright_yellow(),
+                        &item[7..12].blue(),
                     ),
                     5 | 9 => format!(
                         "{}{}{}",
                         &item[0..3].truecolor(20, 20, 20),
-                        &item[3..9].bright_yellow(),
+                        &item[3..9].blue(),
                         &item[9..12].truecolor(20, 20, 20)
                     ),
                     6 => format!(
                         "{}{}{}",
                         &item[0..7].truecolor(20, 20, 20),
-                        &item[7..11].bright_yellow(),
+                        &item[7..11].blue(),
                         &item[11..12].truecolor(20, 20, 20),
                     ),
                     7 => format!(
                         "{}{}{}",
-                        &item[0..2].bright_yellow(),
+                        &item[0..2].blue(),
                         &item[2..8].truecolor(20, 20, 20),
-                        &item[8..12].bright_yellow()
+                        &item[8..12].blue()
                     ),
                     8 => format!(
                         "{}{}{}{}",
-                        &item[0..4].bright_yellow(),
+                        &item[0..4].blue(),
                         &item[4..8].truecolor(20, 20, 20),
-                        &item[8..11].bright_yellow(),
+                        &item[8..11].blue(),
                         &item[11..12].truecolor(20, 20, 20)
                     ),
                     _ => format!("{}", item.truecolor(20, 20, 20)),
@@ -269,34 +265,34 @@ fn main() {
 
             for (i, item) in array.iter().enumerate() {
                 let colored_string = match i + 1 {
-                    2 => format!("{}", &item.bright_yellow()),
+                    2 => format!("{}", &item.blue()),
                     3 => format!(
                         "{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     4 => format!(
                         "{}{}",
                         &item[0..7].truecolor(20, 20, 20),
-                        &item[7..12].bright_yellow(),
+                        &item[7..12].blue(),
                     ),
                     5 => format!(
                         "{}{}{}",
                         &item[0..6].truecolor(20, 20, 20),
-                        &item[6..9].bright_yellow(),
+                        &item[6..9].blue(),
                         &item[9..12].truecolor(20, 20, 20)
                     ),
                     6..=8 => format!(
                         "{}{}{}",
                         &item[0..4].truecolor(20, 20, 20),
-                        &item[4..7].bright_yellow(),
+                        &item[4..7].blue(),
                         &item[7..12].truecolor(20, 20, 20),
                     ),
                     9 => format!(
                         "{}{}{}",
                         &item[0..3].truecolor(20, 20, 20),
-                        &item[3..8].bright_yellow(),
+                        &item[3..8].blue(),
                         &item[8..12].truecolor(20, 20, 20),
                     ),
                     _ => format!("{}", item.truecolor(20, 20, 20)),
@@ -315,44 +311,44 @@ fn main() {
                     2 => format!(
                         "{}{}{}",
                         &item[0..4].truecolor(20, 20, 20),
-                        &item[4..10].bright_yellow(),
+                        &item[4..10].blue(),
                         &item[10..12].truecolor(20, 20, 20)
                     ),
                     3 => format!(
                         "{}{}{}{}{}",
                         &item[0..3].truecolor(20, 20, 20),
-                        &item[3..6].bright_yellow(),
+                        &item[3..6].blue(),
                         &item[6..7].truecolor(20, 20, 20),
-                        &item[7..10].bright_yellow(),
+                        &item[7..10].blue(),
                         &item[10..12].truecolor(20, 20, 20),
                     ),
                     4 => format!(
                         "{}{}{}{}{}",
                         &item[0..2].truecolor(20, 20, 20),
-                        &item[2..5].bright_yellow(),
+                        &item[2..5].blue(),
                         &item[5..7].truecolor(20, 20, 20),
-                        &item[7..10].bright_yellow(),
+                        &item[7..10].blue(),
                         &item[10..12].truecolor(20, 20, 20),
                     ),
                     5 => format!(
                         "{}{}{}{}{}",
                         &item[0..1].truecolor(20, 20, 20),
-                        &item[1..4].bright_yellow(),
+                        &item[1..4].blue(),
                         &item[4..7].truecolor(20, 20, 20),
-                        &item[7..10].bright_yellow(),
+                        &item[7..10].blue(),
                         &item[10..12].truecolor(20, 20, 20),
                     ),
-                    6 => format!("{}", &item.bright_yellow()),
+                    6 => format!("{}", &item.blue()),
                     7 | 8 => format!(
                         "{}{}{}",
                         &item[0..7].truecolor(20, 20, 20),
-                        &item[7..10].bright_yellow(),
+                        &item[7..10].blue(),
                         &item[10..12].truecolor(20, 20, 20),
                     ),
                     9 => format!(
                         "{}{}",
                         &item[0..4].truecolor(20, 20, 20),
-                        &item[4..12].bright_yellow(),
+                        &item[4..12].blue(),
                     ),
                     _ => format!("{}", item.truecolor(20, 20, 20)),
                 };
@@ -366,45 +362,45 @@ fn main() {
 
             for (i, item) in array.iter().enumerate() {
                 let colored_string = match i + 1 {
-                    2 => format!("{}", item.bright_yellow()),
+                    2 => format!("{}", item.blue()),
                     3 => format!(
                         "{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     4 => format!(
                         "{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..12].truecolor(20, 20, 20)
                     ),
                     7 => format!(
                         "{}{}",
                         &item[0..8].truecolor(20, 20, 20),
-                        &item[8..12].bright_yellow()
+                        &item[8..12].blue()
                     ),
                     6 => format!(
                         "{}{}{}",
                         &item[0..7].truecolor(20, 20, 20),
-                        &item[7..11].bright_yellow(),
+                        &item[7..11].blue(),
                         &item[11..12].truecolor(20, 20, 20)
                     ),
                     5 => format!(
                         "{}{}",
-                        &item[0..8].bright_yellow(),
+                        &item[0..8].blue(),
                         &item[8..12].truecolor(20, 20, 20)
                     ),
                     8 => format!(
                         "{}{}{}{}",
-                        &item[0..4].bright_yellow(),
+                        &item[0..4].blue(),
                         &item[4..7].truecolor(20, 20, 20),
-                        &item[7..11].bright_yellow(),
+                        &item[7..11].blue(),
                         &item[11..12].truecolor(20, 20, 20)
                     ),
                     9 => format!(
                         "{}{}{}",
                         &item[0..3].truecolor(20, 20, 20),
-                        &item[3..9].bright_yellow(),
+                        &item[3..9].blue(),
                         &item[9..12].truecolor(20, 20, 20)
                     ),
                     _ => format!("{}", item.truecolor(20, 20, 20)),
@@ -421,36 +417,36 @@ fn main() {
                     2 => format!(
                         "{}{}{}",
                         &item[0..2].truecolor(20, 20, 20),
-                        &item[2..11].bright_yellow(),
+                        &item[2..11].blue(),
                         &item[11..12].truecolor(20, 20, 20)
                     ),
                     3 => format!(
                         "{}{}{}{}",
                         &item[0..1].truecolor(20, 20, 20),
-                        &item[1..4].bright_yellow(),
+                        &item[1..4].blue(),
                         &item[4..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow(),
+                        &item[9..12].blue(),
                     ),
                     4 => format!(
                         "{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..12].truecolor(20, 20, 20),
                     ),
                     5 => format!(
                         "{}{}",
-                        &item[0..10].bright_yellow(),
+                        &item[0..10].blue(),
                         &item[10..12].truecolor(20, 20, 20),
                     ),
                     6..=8 => format!(
                         "{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     9 => format!(
                         "{}{}{}",
                         &item[0..3].truecolor(20, 20, 20),
-                        &item[3..9].bright_yellow(),
+                        &item[3..9].blue(),
                         &item[9..12].truecolor(20, 20, 20)
                     ),
                     _ => format!("{}", &item.truecolor(20, 20, 20)),
@@ -466,14 +462,14 @@ fn main() {
                     2 | 5 | 6 | 9 => format!(
                         "{}{}{}",
                         &item[0..2].truecolor(20, 20, 20),
-                        &item[2..10].bright_yellow(),
+                        &item[2..10].blue(),
                         &item[10..12].truecolor(20, 20, 20)
                     ),
                     3 | 4 | 7 | 8 => format!(
                         "{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
                     _ => format!("{}", &item.truecolor(20, 20, 20)),
                 };
@@ -490,37 +486,37 @@ fn main() {
                     2 => format!(
                         "{}{}{}",
                         &item[0..3].truecolor(20, 20, 20),
-                        &item[3..9].bright_yellow(),
+                        &item[3..9].blue(),
                         &item[9..12].truecolor(20, 20, 20)
                     ),
                     3..=5 => format!(
                         "{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow()
+                        &item[9..12].blue()
                     ),
 
                     6 => format!(
                         "{}{}",
                         &item[0..2].truecolor(20, 20, 20),
-                        &item[2..12].bright_yellow(),
+                        &item[2..12].blue(),
                     ),
                     7 => format!(
                         "{}{}",
                         &item[0..9].truecolor(20, 20, 20),
-                        &item[9..12].bright_yellow(),
+                        &item[9..12].blue(),
                     ),
                     8 => format!(
                         "{}{}{}{}",
-                        &item[0..3].bright_yellow(),
+                        &item[0..3].blue(),
                         &item[3..8].truecolor(20, 20, 20),
-                        &item[8..11].bright_yellow(),
+                        &item[8..11].blue(),
                         &item[11..12].truecolor(20, 20, 20),
                     ),
                     9 => format!(
                         "{}{}{}",
                         &item[0..1].truecolor(20, 20, 20),
-                        &item[1..10].bright_yellow(),
+                        &item[1..10].blue(),
                         &item[10..12].truecolor(20, 20, 20)
                     ),
                     _ => format!("{}", &item.truecolor(20, 20, 20)),
@@ -534,7 +530,7 @@ fn main() {
             for (i, item) in array.iter().enumerate() {
                 let stringy = match i + 1 {
                     2 | 5 | 6 | 9 => format!("{}", &item[..].truecolor(20, 20, 20)),
-                    3 | 4 | 7 | 8 => format!("{}", &item[..].bright_yellow()),
+                    3 | 4 | 7 | 8 => format!("{}", &item[..].blue()),
                     _ => format!("{}", &item.truecolor(20, 20, 20)),
                 };
                 my_vector.push(stringy);
@@ -553,7 +549,7 @@ fn main() {
             }
             my_vector
         };
-        //2. match statemnts as per the number to use the colorify function
+
         match what_hour_tens {
             '0' => *hour_tens = colorify_0(hour_tens),
             '1' => *hour_tens = colorify_1(hour_tens),
@@ -624,7 +620,7 @@ fn main() {
             *dot1 = colorify_nodot(dot1);
             *dot2 = colorify_nodot(dot2);
         }
-        //3. print them with for loop
+
         for i in 0..front_space.len() {
             println!(
                 "                                      {}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}",
