@@ -26,13 +26,13 @@ This project is a terminal-based clock application written in Rust. It displays 
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/terminal-clock-project.git
+    git clone https://github.com/SyedFahad7/Terminal-Clock
     ```
 
 2. Navigate into the project directory:
 
     ```sh
-    cd terminal-clock-project
+    cd TerminalClock
     ```
 
 3. Build the project:
@@ -53,7 +53,4 @@ This project is a terminal-based clock application written in Rust. It displays 
 - It updates the time every second, providing a live clock display.
 
 ### Example Output
-
-
-
 ![image](preview.JPG)
