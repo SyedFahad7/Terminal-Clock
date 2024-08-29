@@ -1,5 +1,8 @@
 # Terminal Clock Project
 
+### Example Output
+![image](preview.JPG)
+
 ## Description
 This project is a terminal-based clock application written in Rust. It displays the current time and date in the terminal and updates every second. The project demonstrates the basics of Rust programming, including handling system time and terminal output. It is designed to be a simple, interactive tool for learning Rust.
 
