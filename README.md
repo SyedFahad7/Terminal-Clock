@@ -57,3 +57,13 @@ This project is a terminal-based clock application written in Rust. It displays 
 
 ### Example Output
 ![image](preview.JPG)
+
+## License
+This project is licensed under the MIT License.
+
+## 🚀 About Me
+I'm a full stack Web & App Developer and an undergrad Data Science Student 👨‍💻🙌
+
+## Authors
+
+- [@Fahad](https://github.com/SyedFahad7)
