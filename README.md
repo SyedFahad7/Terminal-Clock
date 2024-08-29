@@ -57,4 +57,4 @@ This project is a terminal-based clock application written in Rust. It displays 
 
 
 
-![image](preview.jpg)
+![image](preview.JPG)
