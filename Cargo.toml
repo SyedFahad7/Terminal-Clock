@@ -1,0 +1,10 @@
+[package]
+name = "digital_clock_rust"
+version = "0.1.0"
+authors = ["Your Name"]
+edition = "2021"
+
+[dependencies]
+chrono = "0.4"
+colored = "2.0"
+ctrlc = "3.4"
