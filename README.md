@@ -55,9 +55,6 @@ This project is a terminal-based clock application written in Rust. It displays 
 - The application will start and display the current time and date in the terminal.
 - It updates the time every second, providing a live clock display.
 
-### Example Output
-![image](preview.JPG)
-
 ## License
 This project is licensed under the MIT License.
 
